@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Style for the search bar container */
+    .search-container {
+      display: flex;
+      margin: 20px;
+    }
+
+    /* Style for the search input field */
+    .search-input {
+      width: 70%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    /* Style for the search button */
+    .search-button {
+      width: 30%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: 1px solid #007bff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    /* Style for the button on hover */
+    .search-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Search..." id="searchbar">
+    <button class="search-button" id="searchBtn">Search</button>
+  </div>
+    <!-- Button to manually reload the page -->
+    <button id="reloadPageBtn">Reload Page</button>
+  <script>document.getElementById("searchbar").defaultValue = "AVL";
+    // JavaScript to reload the page every 30 seconds
+    function reloadPage() {
+       location.reload();
+     }
+   
+     function clickSearchButton() {
+       var searchButton = document.getElementById('searchBtn');
+       searchButton.click();
+     }
+   
+   // JavaScript to reload the page
+       function reloadPage() {
+           location.reload();
+         }
+     
+   // Function to reload the page automatically every 30 seconds
+       function autoReload() {
+           setTimeout(reloadPage, 30000);
+         }
+     
+         window.addEventListener('load', function() {
+           // Get a reference to the search button by its id
+           var searchButton = document.getElementById('searchBtn');
+           // Get a reference to the manual reload button by its id
+           var reloadButton = document.getElementById('reloadPageBtn');
+     
+           // Trigger the page reload when the search button is clicked
+           searchButton.addEventListener('click', clickSearchButton);
+     
+           // Add a click event listener to the manual reload button
+           reloadButton.addEventListener('click', reloadPage);
+         });
+   
+   setInterval(autoReload());</script>
+</body>
+</html>
